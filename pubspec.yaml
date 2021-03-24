@@ -39,6 +39,11 @@ dependencies:
   dio: ^3.0.10
   flutter_xlider: ^3.4.0
   conditional_builder: ^1.0.2
+  flutter_html: ^1.2.0
+  hexcolor: ^2.0.3
+
+
+
 
 
 

@@ -1,4 +1,5 @@
 import 'package:askproject/layouts/cubit/home_layout_cubit.dart';
+import 'package:askproject/modules/login/login_screen.dart';
 import 'package:askproject/network/remote/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
 
           primarySwatch: Colors.blue,
         ),
-        home: HomeLayoutScreen(),
+        home: LoginScreen(),
       ),
     );
   }

@@ -5,15 +5,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class HomeScreenCubit extends Cubit<HomeScreenStates>{
   HomeScreenCubit() : super(HomeStateInitial());
   static HomeScreenCubit get(context)=>BlocProvider.of(context);
-  List question=[];
+  List questions=[];
   getQuestion(){
     emit(HomeStateLoading());
     DioHelper.getData(
-      path: 'demo/themes/Discy/Boxed/api/get_recent_posts/',
+      path: 'demo/themes/Discy/Boxed/api/get_recent_posts',
       query: {
-        'post_type': 'question'
+        'post_type':'question',
+         'count':10
       }).then((value) {
       emit(HomeStateSuccess());
+      questions=value.data['posts'];
       print(value.data);
     }).catchError((error){
       emit(HomeStateError(error.toString()));
